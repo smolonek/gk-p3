@@ -1,0 +1,30 @@
+﻿<Window x:Class="gk_p3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:gk_p3"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" MouseMove="Window_MouseMove" Loaded="Window_Loaded">
+    <Grid>
+        <Slider  x:Name="R" HorizontalAlignment="Left" ValueChanged="R_ValueChanged" Margin="77,50,0,0" VerticalAlignment="Top" Width="135" Maximum="255" SmallChange="1" IsSnapToTickEnabled="True" Background="Red" BorderBrush="#FF9C5C5C" Foreground="#FFB91010"/>
+        <Slider x:Name="G" HorizontalAlignment="Left" ValueChanged="G_ValueChanged"  Margin="77,95,0,0" VerticalAlignment="Top" Width="135" Maximum="255" SmallChange="1" IsSnapToTickEnabled="True" Background="Lime"/>
+        <Slider x:Name="B" HorizontalAlignment="Left" ValueChanged="B_ValueChanged" Margin="77,140,0,0" VerticalAlignment="Top" Width="135" Maximum="255" SmallChange="1" IsSnapToTickEnabled="True" Background="#FF0080FF"/>
+        <TextBox TextChanged="textBoxR_TextChanged" x:Name="textBoxR" HorizontalAlignment="Left" Margin="217,51,0,0" Text="{Binding ElementName=R, Path=Value, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" VerticalAlignment="Top" Width="29" Height="16"/>
+        <TextBox TextChanged="textBoxG_TextChanged" x:Name="textBoxG" HorizontalAlignment="Left" Margin="217,97,0,0" Text="{Binding ElementName=G, Path=Value, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" VerticalAlignment="Top" Width="29" Height="16"/>
+        <TextBox TextChanged="textBoxB_TextChanged" x:Name="textBoxB" HorizontalAlignment="Left" Margin="217,141,0,0" Text="{Binding ElementName=B, Path=Value, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" VerticalAlignment="Top" Width="29" Height="16"/>
+        <Slider x:Name="C" HorizontalAlignment="Left" ValueChanged="C_ValueChanged" Margin="400,50,0,0" VerticalAlignment="Top" Width="135" Maximum="100" SmallChange="1" IsSnapToTickEnabled="True" Background="Cyan" Foreground="Cyan"/>
+        <Slider x:Name="M" HorizontalAlignment="Left" ValueChanged="M_ValueChanged" Margin="400,95,0,0" VerticalAlignment="Top" Width="135" Maximum="100" SmallChange="1" IsSnapToTickEnabled="True" Background="Magenta"/>
+        <Slider x:Name="Y" HorizontalAlignment="Left" ValueChanged="Y_ValueChanged" Margin="400,140,0,0" VerticalAlignment="Top" Width="135" Maximum="100" SmallChange="1" IsSnapToTickEnabled="True" Background="Yellow"/>
+        <Slider x:Name="K" HorizontalAlignment="Left" ValueChanged="K_ValueChanged" Margin="400,185,0,0" VerticalAlignment="Top" Width="135" Maximum="100" SmallChange="1" IsSnapToTickEnabled="True" Background="Black"/>
+        <TextBox TextChanged="textBoxC_TextChanged" x:Name="textBoxC" HorizontalAlignment="Left" Margin="540,51,0,0" Text="{Binding ElementName=C, Path=Value, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" VerticalAlignment="Top" Width="29" Height="16"/>
+        <TextBox TextChanged="textBoxM_TextChanged" x:Name="textBoxM" HorizontalAlignment="Left" Margin="540,97,0,0" Text="{Binding ElementName=M, Path=Value, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" VerticalAlignment="Top" Width="29" Height="16"/>
+        <TextBox TextChanged="textBoxY_TextChanged" x:Name="textBoxY" HorizontalAlignment="Left" Margin="540,141,0,0" Text="{Binding ElementName=Y, Path=Value, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" VerticalAlignment="Top" Width="29" Height="16"/>
+        <TextBox TextChanged="textBoxK_TextChanged" x:Name="textBoxK" HorizontalAlignment="Left" Margin="540,186,0,0" Text="{Binding ElementName=K, Path=Value, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" VerticalAlignment="Top" Width="29" Height="16"/>
+        <Label x:Name="label" Content="RGB" HorizontalAlignment="Left" Margin="144,27,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1" Content="CMYK" HorizontalAlignment="Left" Margin="468,27,0,0" VerticalAlignment="Top"/>
+        <Rectangle Name="rect" HorizontalAlignment="Left" Height="73" Margin="144,268,0,0" Stroke="Black" VerticalAlignment="Top" Width="345" Fill="#FF000000"/>
+        <Button x:Name="RGBtoCMYK" Content="RGB 👉 CMYK" HorizontalAlignment="Left" Margin="284,76,0,0" VerticalAlignment="Top" Click="RGBtoCMYK_Click"/>
+        <Button x:Name="CMYKtoRGB" Content="RGB 👈 CMYK" HorizontalAlignment="Left" Margin="284,129,0,0" VerticalAlignment="Top" Click="CMYKtoRGB_Click"/>
+    </Grid>
+</Window>
